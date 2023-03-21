@@ -13,7 +13,9 @@ var app = express();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-const mongoDB = process.env.MONGODB_URI;
+const dev_db_url = `mongodb+srv://tet:vGfeDKnwCNN8a7XS@cluster0.djbois6.mongodb.net/mini-message-board?retryWrites=true&w=majority`;
+
+const mongoDB = process.env.MONGODB_URI || dev_db_url;
 
 main().catch((err) => console.log(err));
 async function main() {
