@@ -13,11 +13,14 @@ var app = express();
 const mongoose = require("mongoose");
 mongoose.set("strictQuery", false);
 
-const dev_db_url = `mongodb+srv://tet:vGfeDKnwCNN8a7XS@cluster0.djbois6.mongodb.net/mini-message-board?retryWrites=true&w=majority`;
+const dev_db_url = `mongodb+srv://tet:vGfeDKnwCNN8a7XS@cluster0.djbois6.mongodb.net/mini-message-board`;
 
-const mongoDB = process.env.MONGO_URL || dev_db_url;
+const mongoDB = dev_db_url;
+// const mongoDB = process.env.MONGO_URL || dev_db_url;
+// const mongoDB =
+//   "mongodb://mongo:gRaMkcvmFv2R0FU4KR3d@containers-us-west-36.railway.app:6718";
 
-main().catch((err) => console.log(err));
+mongodb: main().catch((err) => console.log(err));
 async function main() {
   await mongoose.connect(mongoDB);
 }
